@@ -4,7 +4,7 @@ Wilujeung akang teteh :)
 Introducing, we are from the Academy's 2nd Developer Team, Striving to learn about the world of web development. We, consist of :
 - Stevannie Pratama      > SNI 
 - Farrel Ardya Ghalyndra > REL :crescent_moon:
-- Geraldi Ridwan Hakim   > ALD :leaves: 
+- Geraldi Ridwan Hakim   > ALD :rage1:
 
 
 Sebagai anggota komunitas Daskom-Lab 2024-Academy, kami merasa terhormat menjadi bagian dari kelompok ini dan berharap dapat mencapai kesuksesan sebagai pengembang web yang mandiri di masa depan !!
