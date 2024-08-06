@@ -1,4 +1,4 @@
-**#Introduction: WebDev 02 - Dasmart **
+# Introduction: WebDev 02 - Dasmart 
 Wilujeung akang teteh :)
 
 Introducing, we are from the Academy's 2nd Developer Team, Striving to learn about the world of web development. We, consist of :
