@@ -1,1 +1,4 @@
 # dasmart24
+
+Dasmart (Da bes mart) merupakan sebuah platform penjualan barang kebutuhan sehari-hari sederhana untuk memudahkan pelanggan dalam melakukan transaksi. Website ini memiliki dua jenis pengguna, yakni Admin dan Customer. Akan ada fitur Sign In dan Sign Up untuk Customer, sedangkan untuk Sign In Admin akan tersedia opsi tersendiri di main menu Sign In. Admin memiliki peran dalam manajemen produk, yang mencakup akses untuk menambahkan, mengedit, dan menghapus item dalam katalog produk. Di sisi lain, Customer dapat dengan mudah menjelajahi berbagai produk yang tersedia, menambahkannya ke keranjang belanja, dan menyelesaikan proses checkout. Website ini juga dilengkapi dengan fitur pencarian produk sesuai kategori dan penilaian serta ulasan pelanggan yang akan muncul saat transaksi selesai.
+Website ini akan dihias semenarik mungkin yang akan membuat Customer betah untuk melakukan transaksi.
