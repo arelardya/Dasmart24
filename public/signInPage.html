@@ -49,7 +49,8 @@
                         <a href="#signUp" class="ml-1 text-red-500 hover:text-yellow-100">Start Here</a>
                     </div>
                 </form>
-                <a href="./market.html"><img src="./assets/nextButton.png" id="nextButton" class="h-10 mt-5 float-right" onmouseover="changeImage(1)"  onmouseout="changeImage(2)"></a>
+                <img src="./assets/button/nextButton.png" id="nextButton" class="h-10 mt-5 float-right" onmouseover="changeImage(1)" onmouseout="changeImage(2)" onclick="submitForm()">
+                <p id="message" class="text-red-500 text-center mt-4 hidden">Invalid username or password.</p>
             </div>
         </div>
         <a href="#signInAdmin" class="float-right text-white mt-24 mr-14">Are You an Admin?</a>
