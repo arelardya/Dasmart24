@@ -32,7 +32,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="flex ml-20 pl-20 mt-28">
+        <div class="flex mt-28 justify-center">
             <div class="bg-gray-300 bg-opacity-50 rounded-lg shadow-md p-10 w-">
                 <div class="flex gap-x-2 mb-4">
                     <h2 class="text-2xl font-bold ml-3 text-white">Sign In -</h2>
@@ -40,15 +40,16 @@
                   </div>
                 <form>
                     <div class="mb-4">
-                        <label for="username" class="block font-bold mb-2 text-white">Username</label>
-                        <input type="text" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username">
+                        <label for="Username" class="block font-bold mb-2 text-white">Username</label>
+                        <input type="text" id="adminUsername" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username">
                     </div>
                     <div class="mb-6">
-                        <label for="password" class="block font-bold mb-2 text-white">Password</label>
-                        <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password">
+                        <label for="Password" class="block font-bold mb-2 text-white">Password</label>
+                        <input type="password" id="adminPassword" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password">
                     </div>
                 </form>
-                <a href="./market.html"><img src="./assets/nextButton.png" id="nextButton" class="h-10 mt-5 float-right" onmouseover="changeImage(1)"  onmouseout="changeImage(2)"></a>
+                <img src="./assets/nextButton.png" id="nextButton" class="h-10 mt-5 float-right" onmouseover="changeImage(1)" onmouseout="changeImage(2)" onclick="adminSubmitForm()">
+                <p id="message" class="text-red-500 text-center mt-4 hidden">Invalid username or password.</p>
             </div>
         </div>
     </div>

@@ -6,7 +6,21 @@ function submitForm() {
     const password = document.getElementById('password').value;
 
     if (username === dummyUsername && password === dummyPassword) {
-        window.location.href = './market.html'; // Replace with the URL of the page you want to redirect to
+        window.location.href = './market.html';
+    } else {
+        document.getElementById('message').classList.remove('hidden');
+    }
+}
+
+function adminSubmitForm() {
+    const adminUsername = 'admin123';
+    const adminPassword = 'password123';
+
+    const usernameA = document.getElementById('adminUsername').value;
+    const passwordA = document.getElementById('adminPassword').value;
+
+    if (usernameA === adminUsername && passwordA === adminPassword) {
+        window.location.href = './menuAdmin.html';
     } else {
         document.getElementById('message').classList.remove('hidden');
     }
