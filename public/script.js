@@ -6,7 +6,7 @@ function submitForm() {
     const password = document.getElementById('password').value;
 
     if (username === dummyUsername && password === dummyPassword) {
-        window.location.href = '#marketplace'; // Replace with the URL of the page you want to redirect to
+        window.location.href = './market.html'; // Replace with the URL of the page you want to redirect to
     } else {
         document.getElementById('message').classList.remove('hidden');
     }
