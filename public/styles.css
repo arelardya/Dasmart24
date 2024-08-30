@@ -1107,6 +1107,10 @@ video {
   gap: 2.5rem;
 }
 
+.gap-2{
+  gap: 0.5rem;
+}
+
 .gap-x-2{
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -1788,6 +1792,10 @@ video {
 
   .md\:flex{
     display: flex;
+  }
+
+  .md\:hidden{
+    display: none;
   }
 
   .md\:h-96{

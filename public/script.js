@@ -65,3 +65,13 @@ function changeImage(state) {
         nextButton.src = './assets/nextButton.png'; // Ensure path is correct
     }
 }
+
+//burger
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerMenuButton = document.getElementById('burgerMenuButton');
+    const navLinks = document.getElementById('navLinks');
+
+    burgerMenuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
+    });
+});
