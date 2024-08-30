@@ -1,7 +1,9 @@
 // Function to handle form submission
 function submitForm(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    
+    if (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+    }
+
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const message = document.getElementById('message');
@@ -21,7 +23,7 @@ function submitForm(event) {
     }
 }
 
-//Check Status
+// Check Status
 function checkLoginStatus() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
 
@@ -36,13 +38,13 @@ function checkLoginStatus() {
     }
 }
 
-//Login
+// Login
 function login() {
     localStorage.setItem('isLoggedIn', 'true');
     checkLoginStatus();
 }
 
-//Logout
+// Logout
 function logout() {
     localStorage.removeItem('isLoggedIn');
     checkLoginStatus();
@@ -54,11 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
     checkLoginStatus();
 });
 
+// Change image based on state
 function changeImage(state) {
     const nextButton = document.getElementById('nextButton');
     if (state === 1) {
-        nextButton.src = '/public/assets/nextButton2.png';
+        nextButton.src = './assets/nextButton2.png'; // Ensure path is correct
     } else {
-        nextButton.src = '/public/assets/nextButton.png';
+        nextButton.src = './assets/nextButton.png'; // Ensure path is correct
     }
 }

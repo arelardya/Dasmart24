@@ -10,49 +10,79 @@
 </head>
 <body class="font-[Poppins]">
     <div class="min-h-screen" style="background-image: url(./assets/bg_signIn.jpg);">
-        <nav class="flex justify-between items-center">
+        <nav class="flex flex-wrap justify-between items-center p-5">
             <div>
                 <a href="./index.html">
-                    <img class="w-20 h-20" src="./assets/logoijo.png" alt="">
+                    <img class="w-16 h-16 md:w-20 md:h-20" src="./assets/logo.png" alt="">
                 </a>
             </div>
-            <div>
-                <ul class="flex items-center pr-5">
-                    <li>
-                        <a class="px-5 pb-3 text-black relative after:block after:bg-green-800 after:content-[''] after:h-[3px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:absolute after:left-0 after:bottom-0 hover:after:w-full" 
+            <div class="bg-white bg-opacity-80 m-7 p-4 rounded-2xl w-full md:w-auto">
+                <ul class="flex flex-col md:flex-row items-center pr-5">
+                    <li class="py-2 md:py-0">
+                        <a class="px-3 md:px-5 pb-2 text-black relative after:block after:bg-green-800 after:content-[''] after:h-[3px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:absolute after:left-0 after:bottom-0 hover:after:w-full" 
                         href="./market.html">Marketplace</a>
                     </li>
-                    <li>
-                        <a class="px-5 pb-3 text-black relative after:block after:bg-green-800 after:content-[''] after:h-[3px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:absolute after:left-0 after:bottom-0 hover:after:w-full" 
-                        href="#aboutus">About Us</a>
+                    <li class="py-2 md:py-0">
+                        <a class="px-3 md:px-5 pb-2 text-black relative after:block after:bg-green-800 after:content-[''] after:h-[3px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:absolute after:left-0 after:bottom-0 hover:after:w-full" 
+                        href="./aboutus.html">About Us</a>
+                    </li>
+                    <li class="py-2 md:py-0">
+                        <a id="profile" class="px-3 md:px-5 pb-2 text-black relative after:block after:bg-green-800 after:content-[''] after:h-[3px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:absolute after:left-0 after:bottom-0 hover:after:w-full" 
+                        href="./profilePage.html">Profile</a>
                     </li>
                     <li>
-                        <a class="p-3 px-4 text-white bg-green-800 rounded-3xl hover:bg-green-600" href="./signInPage.html">Sign In</a>
-                    </li>
+                        <a id="basket" class="hidden p-3 px-4 text-white bg-green-800 rounded-3xl hover:bg-green-600" href="./basket.html">Basket</a>
+                    </li>    
+                    <li>
+                        <a id="signin" class="hidden p-3 px-4 text-white bg-green-800 rounded-3xl hover:bg-green-600" href="./signInPage.html">Sign In</a>
+                    </li>   
                 </ul>
             </div>
         </nav>
-        <div class="flex justify-center items-center mt-28">
-            <div class="bg-gray-300 bg-opacity-50 rounded-lg shadow-md p-10 w-9/12">
+        <div class="flex justify-center items-center mt-3">
+            <div class="bg-gray-300 bg-opacity-50 rounded-lg shadow-md p-10 w-9/12 mb-12">
                 <h2 class="text-2xl font-bold mb-4 text-center text-white">Sign In</h2>
-                <form>
+                <form id="signInForm">
                     <div class="mb-4">
                         <label for="username" class="block font-bold mb-2 text-white">Username</label>
                         <input type="text" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username">
-                    </div>
+                    </div>  
                     <div class="mb-6">
                         <label for="password" class="block font-bold mb-2 text-white">Password</label>
                         <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password">
                     </div>
-                    <div class="flex">
-                        <p class="text-white">New Customer?</p>
-                        <a href="#signUp" class="ml-1 text-red-500 hover:text-yellow-100">Start Here</a>
+                    <div>
+                        <div class="flex">
+                            <p class="text-white">New Customer?</p>
+                            <a href="./signUpPage.html" class="text-red-500 hover:text-yellow-100">Start Here</a>
+                        </div>
+                        <a href="./adminlogin.html" class="hover:text-red-500 text-white">An Admin?</a>
                     </div>
                 </form>
-                <img src="./assets/button/nextButton.png" id="nextButton" class="h-10 mt-5 float-right" onmouseover="changeImage(1)" onmouseout="changeImage(2)" onclick="submitForm()">
+                <img src="./assets/nextButton.png" id="nextButton" class="h-10 mt-5 float-right cursor-pointer" onmouseover="changeImage(1)" onmouseout="changeImage(2)" onclick="submitForm(event)">
                 <p id="message" class="text-red-500 text-center mt-4 hidden">Invalid username or password.</p>
             </div>
         </div>
     </div>
+    <footer class="bg-green-800 p-10 grid grid-cols-1 z-20 relative md:grid-cols-3 text-white gap-5">
+        <div>
+            <p>
+                Dasmart & co.
+            </p>
+            <p>
+                Committed to bringing you the best of goods.<br>&copy; 2020, dasmart&co. All Rights Reserved
+            </p>
+        </div>
+        <div class="flex justify-center">
+            <img class="w-[20%]" src="./assets/logo.png" alt="">
+        </div>
+        <div class="flex justify-end text-right">
+            <p class="ml-16">
+                (+62)824-2535-3252-6366<br>
+                dasmart@daskomlab.com<br>
+                Berharap Bersama St. Tultington
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
