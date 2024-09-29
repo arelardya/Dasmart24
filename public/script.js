@@ -16,7 +16,7 @@ function submitForm(event) {
         // Simulate successful login
         localStorage.setItem('isLoggedIn', 'true');
         message.classList.add('hidden');
-        window.location.href = './market.html'; // Redirect to homepage or another page
+        window.location.href = './market.html'; //redirect
     } else {
         // Show error message
         message.classList.remove('hidden');
@@ -51,18 +51,18 @@ function logout() {
     window.location.href = './index.html';
 }
 
-// Execute when the document is fully loaded
+//check login status
 document.addEventListener('DOMContentLoaded', function() {
     checkLoginStatus();
 });
 
-// Change image based on state
+//button change
 function changeImage(state) {
     const nextButton = document.getElementById('nextButton');
     if (state === 1) {
-        nextButton.src = './assets/nextButton2.png'; // Ensure path is correct
+        nextButton.src = './assets/nextButton2.png'; 
     } else {
-        nextButton.src = './assets/nextButton.png'; // Ensure path is correct
+        nextButton.src = './assets/nextButton.png'; 
     }
 }
 
