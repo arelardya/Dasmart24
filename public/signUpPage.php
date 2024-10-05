@@ -1,3 +1,21 @@
+<?php
+// Koneksi ke functions.php
+require '../constant/functions.php';
+
+$registrationSuccess = false;
+$registrationError = '';
+
+// jika tombol registrasi sudah ditekan
+if (isset($_POST["register"])){
+    if (regisAdmins($_POST) > 0){
+        $registrationSuccess = true;
+    } else{
+        $registrationError = "Registration failed. Please try again.";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,22 +51,34 @@
     <div class="flex justify-center items-center mt-20">
         <div class="bg-gray-300 bg-opacity-50 rounded-lg shadow-md p-10 w-9/12">
             <h2 class="text-2xl font-bold mb-4 text-center text-white">Sign In</h2>
+            <?php if ($registrationSuccess): ?>
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4" role="alert">
+                    <strong class="font-bold">Success!</strong>
+                    <span class="block sm:inline">Registration completed successfully.</span>
+                </div>
+            <?php endif; ?>
+            <?php if ($registrationError): ?>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span class="block sm:inline"><?php echo $registrationError; ?></span>
+                </div>
+            <?php endif; ?>
             <form>
                 <div class="mb-4">
                     <label for="username" class="block font-bold mb-2 text-white">Username</label>
-                    <input type="text" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username">
+                    <input type="text" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username" required>
                 </div>
                 <div class="mb-4">
                     <label for="username" class="block font-bold mb-2 text-white">Email</label>
-                    <input type="text" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email">
+                    <input type="text" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" required>
                 </div>
                 <div class="mb-6">
                     <label for="password" class="block font-bold mb-2 text-white">Password</label>
-                    <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password">
+                    <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" required> 
                 </div>
                 <div class="mb-6">
                     <label for="password" class="block font-bold mb-2 text-white">Confirm Password</label>
-                    <input type="password" id="confirmPassword" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Confirm Password">
+                    <input type="password" id="password2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Confirm Password" required>
                 </div>
             </form>
             <a href="signInPage.html">
