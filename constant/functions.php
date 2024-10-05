@@ -13,8 +13,7 @@ function regisAdmins($data) {
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
     $email= mysqli_real_escape_string($conn, $data["email"]);
-    $role= mysqli_real_escape_string($conn, $data["role"]);
-
+    
     // Check if username already exists
     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
     if (mysqli_fetch_assoc($result)) {
@@ -36,7 +35,10 @@ function regisAdmins($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert new user into database
-    mysqli_query($conn, "INSERT INTO users (username, password, email, role) VALUES ('$username', '$password', '$email', 'customer' )");
-
-    return mysqli_affected_rows($conn);
+    if (mysqli_query($conn, "INSERT INTO users (username, password, email, role) VALUES ('$username', '$password', '$email', 'customer')")) {
+        return true; // or return mysqli_affected_rows($conn);
+    } else {
+        echo "Error: " . mysqli_error($conn); // Output any error for debugging
+        return false;
+    }
 }

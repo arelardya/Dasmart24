@@ -1,6 +1,6 @@
 <?php
 // Koneksi ke functions.php
-require '../constant/functions.php';
+require_once '../constant/functions.php';
 
 $registrationSuccess = false;
 $registrationError = '';
@@ -13,7 +13,6 @@ if (isset($_POST["register"])){
         $registrationError = "Registration failed. Please try again.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +41,7 @@ if (isset($_POST["register"])){
                     <a class="px-5 pb-3 text-white hover:underline" href="./aboutus.html">About Us</a>
                 </li>
                 <li>
-                    <a class="p-3 px-4 text-green-800 bg-white rounded-3xl hover:bg-green-600" href="./signInPage.html">Sign In</a>
+                    <a class="p-3 px-4 text-green-800 bg-white rounded-3xl hover:bg-green-600" href="./signInPage.php">Sign In</a>
                 </li>
             </ul>
         </div>
@@ -63,25 +62,26 @@ if (isset($_POST["register"])){
                     <span class="block sm:inline"><?php echo $registrationError; ?></span>
                 </div>
             <?php endif; ?>
-            <form>
+            <form method="POST">
                 <div class="mb-4">
                     <label for="username" class="block font-bold mb-2 text-white">Username</label>
-                    <input type="text" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username" required>
+                    <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Username" required>
                 </div>
                 <div class="mb-4">
-                    <label for="username" class="block font-bold mb-2 text-white">Email</label>
-                    <input type="text" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" required>
+                    <label for="email" class="block font-bold mb-2 text-white">Email</label>
+                    <input type="text" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" required>
                 </div>
                 <div class="mb-6">
                     <label for="password" class="block font-bold mb-2 text-white">Password</label>
-                    <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" required> 
+                    <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" required> 
                 </div>
                 <div class="mb-6">
-                    <label for="password" class="block font-bold mb-2 text-white">Confirm Password</label>
-                    <input type="password" id="password2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Confirm Password" required>
+                    <label for="password2" class="block font-bold mb-2 text-white">Confirm Password</label>
+                    <input type="password" id="password2" name="password2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Confirm Password" required>
                 </div>
+                <button type="submit" name="register" class="bg-green-600 text-white py-2 px-4 rounded">Register</button>
             </form>
-            <a href="signInPage.html">
+            <a href="signInPage.php">
                 <img src="./assets/nextButton.png" id="nextButton" class="h-10 mt-5 float-right" onmouseover="changeImage(1)" onmouseout="changeImage(2)">
             </a>
         </div>
