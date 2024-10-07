@@ -6,7 +6,7 @@
     <title>User Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body class="font-[Poppins]">
     <div class="min-h-screen bg-cover flex flex-col justify-between" style="background-image: url(./assets/bg_profile.png);">
@@ -45,23 +45,26 @@
 
         <!-- Profile Section -->
         <section class="mt-14 mx-10 mb-10 flex-grow">
-            <h1 class="text-5xl mb-10">ur-profile</h1>
+            <h1 class="text-5xl mb-10">Your Profile</h1>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
                 <div>
                     <img src="./assets/profile.png" alt="Profile Picture" class="w-48 h-48">
                     <div class="flex justify-center">
-                        <button class="bg-green-800 hover:bg-green-500 text-white font-bold py-2 px-5 rounded-full mt-6 w-40" onclick="logout()">Log Out</button>
+                        <form method="POST" action="../constant/functions.php"> <!-- Assuming functions.php is the correct handler -->
+                            <button type="submit" name="logout" class="bg-red-600 text-white py-2 px-4 rounded">Logout</button>
+                        </form>
                     </div>
                 </div>
                 <div class="flex flex-col xl:w-8/12 md:w-full">
-                    <h2 class="text-xl font-bold text-gray-800 mb-2">Username-of-account</h2>
-                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Description of account</h3>
+                    <h2 id="username" class="text-xl font-bold text-gray-800 mb-2"></h2>
+                    <h3 id="email" class="text-lg font-semibold text-gray-700 mb-4"></h3>
                     <p class="text-gray-600">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dictum magna ante, nec ornare odio condimentum eu. Aenean congue diam ante, sed commodo elit tincidunt sit amet. Nulla congue congue ipsum id venenatis. In ac mi dui. Fusce in mollis justo. Mauris eu diam rhoncus, ultricies est ut, mattis neque. Cras pretium neque id gravida convallis. Curabitur sollicitudin, nibh non condimentum sollicitudin, sem dolor semper ante, nec placerat sapien felis id sapien.
                     </p>
-                                    </div>
+                </div>
             </div>
         </section>
+        
 
         <!-- Footer -->
         <footer class="bg-green-800 p-10 grid grid-cols-1 z-20 relative md:grid-cols-3 text-white gap-5">
