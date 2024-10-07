@@ -49,6 +49,9 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Item</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="./script.js"></script>
 </head>
 <body>
 <nav class="flex justify-between items-center">
@@ -73,7 +76,7 @@ mysqli_close($conn);
             </ul>
         </div>
     </nav>
-    <h1>Add a New Item</h1>
+    <h1 class="text-2xl font-bold mb-4 text-center">Add a New Item</h1>
 
     <!-- Display success or error message -->
     <?php if ($successMessage): ?>
@@ -85,26 +88,37 @@ mysqli_close($conn);
     <?php endif; ?>
 
     <!-- Add Item Form -->
-    <form action="addItem.php" method="POST">
-        <label for="itemName">Item Name:</label>
-        <input type="text" id="itemName" name="itemName" required><br>
-
-        <label for="itemDescription">Description:</label>
-        <textarea id="itemDescription" name="itemDescription" required></textarea><br>
-
-        <label for="itemPrice">Price:</label>
-        <input type="number" id="itemPrice" name="itemPrice" step="0.01" required><br>
-
-        <label for="itemCategory">Category:</label>
-        <select id="itemCategory" name="itemCategory" required>
-            <option value="vegetable">Vegetable</option>
-            <option value="fruit">Fruit</option>
-            <option value="other">Other</option>
-        </select><br>
-
-        <input type="submit" value="Add Item">
+    <form action="addItem.php" method="POST" class="flex justify-center items-center w-full px-10 mb-10">
+        <div class="bg-gray-300 bg-opacity-50 rounded-lg shadow-md p-10 w-9/16">
+            <table class="w-full">
+                <tr class="flex items-center mb-4">
+                    <th class="w-40"><label for="itemName">Item Name</label></th>
+                    <td><input type="text" id="itemName" name="itemName" required class="w-full"><br></td>
+                </tr>
+                <tr class="flex items-center mb-4">
+                    <th class="w-40"><label for="itemDescription">Description</label></th>
+                    <td><textarea id="itemDescription" name="itemDescription" required class="w-full"></textarea><br></td>
+                </tr>
+                <tr class="flex items-center mb-4">
+                    <th class="w-40"><label for="itemPrice">Price</label></th>
+                    <td><input type="number" id="itemPrice" name="itemPrice" step="0.01" required class="w-full"><br></td>
+                </tr>
+                <tr class="flex items-center mb-4">
+                    <th class="w-40"><label for="itemCategory">Category</label></th>
+                    <td>
+                        <select id="itemCategory" name="itemCategory" required class="w-full">
+                            <option value="vegetable">Vegetable</option>
+                            <option value="fruit">Fruit</option>
+                            <option value="other">Other</option>
+                        </select><br>
+                    </td>
+                </tr>    
+            </table>
+            <input type="submit" value="Add Item" class="w-full text-xl font-semibold text-green-600">
+        </div>
     </form>
-    <footer class="bg-green-800 p-10 grid grid-cols-3 text-white">
+    
+    <footer class="bg-green-800 p-10 grid grid-cols-3 text-white sticky bottom-0">
         <div>
             <p>
                 Dasmart & co.
